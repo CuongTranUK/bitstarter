@@ -8,9 +8,9 @@ var app = express.createServer(express.logger());
 function getFile() {
 fs.readFile('index.html','utf8', function(err, data) {
 	if(err) throw err;
-	var buf = new Buffer(data, 'utf8');
-	/* console.log(buf.toString('utf8')); */
-	return buf;
+	/* var buf = new Buffer(data, 'utf8');
+	console.log(buf.toString('utf8')); */
+	return data;
 });
 }
 
@@ -18,8 +18,8 @@ fs.readFile('index.html','utf8', function(err, data) {
 app.get('/', function(request, response) {
   /* output = "Hello World"; */
   output = getFile();
-  var str = output.toString('utf8');
-  response.send(str);
+  /* var str = output.toString('utf8'); */
+  response.send(output);
 });
 
 var port = process.env.PORT || 5000;
