@@ -18,7 +18,7 @@ fs.readFile('index.html','utf8', function(err, data) {
 app.get('/', function(request, response) {
   /* output = "Hello World"; */
   output = getFile();
-  response.send(output);
+  response.send(output.toString('utf8'));
 });
 
 var port = process.env.PORT || 5000;
