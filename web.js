@@ -18,6 +18,7 @@ fs.readFile('index.html','utf8', function(err, data) {
 app.get('/', function(request, response) {
   /* output = "Hello World"; */
   output = getFile();
+  console.log(output);
   /* var str = output.toString('utf8'); */
   response.send(output);
 });
