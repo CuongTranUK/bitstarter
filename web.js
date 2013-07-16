@@ -9,13 +9,15 @@ function getFile() {
 fs.readFile('index.html','utf8', function(err, data) {
 	if(err) throw err;
 	var buf = new Buffer(data, 'utf8');
-	console.log(buf.toString('utf8'));
+	/* console.log(buf.toString('utf8')); */
+	return buf;
 });
 }
 
 
 app.get('/', function(request, response) {
-  output = "Hello World";
+  /* output = "Hello World"; */
+  output = getFile();
   response.send(output);
 });
 
