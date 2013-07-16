@@ -10,7 +10,7 @@ fs.readFile('index.html','utf8', function(err, data) {
 	if(err) throw err;
 	/* var buf = new Buffer(data, 'utf8');
 	console.log(buf.toString('utf8')); */
-	return data;
+	return data.toString();
 });
 }
 
